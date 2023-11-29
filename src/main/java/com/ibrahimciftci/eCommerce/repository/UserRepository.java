@@ -1,6 +1,6 @@
 package com.ibrahimciftci.eCommerce.repository;
 
-import com.ibrahimciftci.eCommerce.entity.User;
+import com.ibrahimciftci.eCommerce.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

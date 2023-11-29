@@ -1,6 +1,6 @@
 package com.ibrahimciftci.eCommerce.dto;
 
-import com.ibrahimciftci.eCommerce.entity.Role;
+import com.ibrahimciftci.eCommerce.model.Role;
 
 import java.util.Set;
 

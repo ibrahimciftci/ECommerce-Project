@@ -1,6 +1,6 @@
 package com.ibrahimciftci.eCommerce.dto;
 
-import com.ibrahimciftci.eCommerce.entity.Product;
+import com.ibrahimciftci.eCommerce.model.Product;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

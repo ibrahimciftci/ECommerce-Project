@@ -1,11 +1,9 @@
-package com.ibrahimciftci.eCommerce.entity;
+package com.ibrahimciftci.eCommerce.model;
 
 import com.ibrahimciftci.eCommerce.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 import java.util.Set;

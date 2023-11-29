@@ -1,4 +1,4 @@
-package com.ibrahimciftci.eCommerce.entity;
+package com.ibrahimciftci.eCommerce.model;
 
 import com.ibrahimciftci.eCommerce.dto.ProductDTO;
 import jakarta.persistence.*;

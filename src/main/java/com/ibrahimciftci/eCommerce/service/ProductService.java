@@ -1,7 +1,7 @@
 package com.ibrahimciftci.eCommerce.service;
 
 import com.ibrahimciftci.eCommerce.dto.ProductDTO;
-import com.ibrahimciftci.eCommerce.entity.Product;
+import com.ibrahimciftci.eCommerce.model.Product;
 import com.ibrahimciftci.eCommerce.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,8 @@
 package com.ibrahimciftci.eCommerce;
 
 import com.ibrahimciftci.eCommerce.dto.UserDTO;
-import com.ibrahimciftci.eCommerce.entity.Gender;
-import com.ibrahimciftci.eCommerce.entity.Role;
+import com.ibrahimciftci.eCommerce.model.Gender;
+import com.ibrahimciftci.eCommerce.model.Role;
 import com.ibrahimciftci.eCommerce.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql
+    restart: always
+    container_name: ecommerce-db
+    environment:
+      MYSQL_ROOT_PASSWORD: springstudent
+      MYSQL_DATABASE: eCommerce-db
+      MYSQL_USER: springstudent
+      MYSQL_PASSWORD: springstudent
+    ports:
+      - '3306:3306'

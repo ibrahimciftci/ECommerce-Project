@@ -1,6 +1,6 @@
 package com.ibrahimciftci.eCommerce.repository;
 
-import com.ibrahimciftci.eCommerce.entity.OrderItem;
+import com.ibrahimciftci.eCommerce.model.OrderItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

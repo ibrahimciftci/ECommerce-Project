@@ -1,9 +1,9 @@
 package com.ibrahimciftci.eCommerce.service;
 
-import com.ibrahimciftci.eCommerce.entity.CartItem;
-import com.ibrahimciftci.eCommerce.entity.Order;
-import com.ibrahimciftci.eCommerce.entity.OrderItem;
-import com.ibrahimciftci.eCommerce.entity.ShoppingCart;
+import com.ibrahimciftci.eCommerce.model.CartItem;
+import com.ibrahimciftci.eCommerce.model.Order;
+import com.ibrahimciftci.eCommerce.model.OrderItem;
+import com.ibrahimciftci.eCommerce.model.ShoppingCart;
 import com.ibrahimciftci.eCommerce.repository.OrderItemRepository;
 import com.ibrahimciftci.eCommerce.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;

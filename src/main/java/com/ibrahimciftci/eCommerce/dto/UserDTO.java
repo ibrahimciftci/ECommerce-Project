@@ -1,8 +1,8 @@
 package com.ibrahimciftci.eCommerce.dto;
 
-import com.ibrahimciftci.eCommerce.entity.Gender;
-import com.ibrahimciftci.eCommerce.entity.Role;
-import com.ibrahimciftci.eCommerce.entity.User;
+import com.ibrahimciftci.eCommerce.model.Gender;
+import com.ibrahimciftci.eCommerce.model.Role;
+import com.ibrahimciftci.eCommerce.model.User;
 import lombok.Builder;
 
 

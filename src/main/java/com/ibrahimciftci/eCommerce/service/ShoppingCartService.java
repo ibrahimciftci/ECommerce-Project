@@ -1,10 +1,10 @@
 package com.ibrahimciftci.eCommerce.service;
 
 import com.ibrahimciftci.eCommerce.dto.CartItemDTO;
-import com.ibrahimciftci.eCommerce.entity.CartItem;
-import com.ibrahimciftci.eCommerce.entity.Product;
-import com.ibrahimciftci.eCommerce.entity.ShoppingCart;
-import com.ibrahimciftci.eCommerce.entity.User;
+import com.ibrahimciftci.eCommerce.model.CartItem;
+import com.ibrahimciftci.eCommerce.model.Product;
+import com.ibrahimciftci.eCommerce.model.ShoppingCart;
+import com.ibrahimciftci.eCommerce.model.User;
 import com.ibrahimciftci.eCommerce.repository.CartItemRepository;
 import com.ibrahimciftci.eCommerce.repository.ShoppingCartRepository;
 import org.springframework.beans.factory.annotation.Autowired;

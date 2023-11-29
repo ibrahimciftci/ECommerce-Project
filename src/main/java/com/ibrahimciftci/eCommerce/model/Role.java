@@ -1,4 +1,4 @@
-package com.ibrahimciftci.eCommerce.entity;
+package com.ibrahimciftci.eCommerce.model;
 
 import org.springframework.security.core.GrantedAuthority;
 

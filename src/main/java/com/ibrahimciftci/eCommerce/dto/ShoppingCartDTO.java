@@ -1,8 +1,8 @@
 package com.ibrahimciftci.eCommerce.dto;
 
-import com.ibrahimciftci.eCommerce.entity.CartItem;
-import com.ibrahimciftci.eCommerce.entity.ShoppingCart;
-import com.ibrahimciftci.eCommerce.entity.User;
+import com.ibrahimciftci.eCommerce.model.CartItem;
+import com.ibrahimciftci.eCommerce.model.ShoppingCart;
+import com.ibrahimciftci.eCommerce.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

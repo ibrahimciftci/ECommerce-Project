@@ -1,6 +1,6 @@
 package com.ibrahimciftci.eCommerce.repository;
 
-import com.ibrahimciftci.eCommerce.entity.Product;
+import com.ibrahimciftci.eCommerce.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigDecimal;
