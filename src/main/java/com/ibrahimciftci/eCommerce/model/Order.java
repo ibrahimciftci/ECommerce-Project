@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "order_table")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

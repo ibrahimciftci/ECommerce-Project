@@ -1,15 +1,16 @@
 package com.ibrahimciftci.eCommerce.dto;
 
 import com.ibrahimciftci.eCommerce.model.Role;
+import lombok.Builder;
 
 import java.util.Set;
 
+
+@Builder
 public record CreateUserRequest(
-        String firstName,
-        String lastName,
+        String name,
         String username,
         String password,
-        Set<Role>authorities
-
-) {
+        Set<Role> authorities
+){
 }

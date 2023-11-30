@@ -1,7 +1,7 @@
 package com.ibrahimciftci.eCommerce.dto;
 
-public record AuthRequest(
+public record AuthRequest (
         String username,
         String password
-) {
+){
 }

@@ -1,9 +1,17 @@
 package com.ibrahimciftci.eCommerce.service;
 
+import com.ibrahimciftci.eCommerce.dto.AuthRequest;
+import com.ibrahimciftci.eCommerce.dto.CreateUserRequest;
 import com.ibrahimciftci.eCommerce.dto.UserDTO;
 import com.ibrahimciftci.eCommerce.model.User;
 import com.ibrahimciftci.eCommerce.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -30,62 +38,25 @@ public class UserService implements UserDetailsService {
         return user.orElseThrow(EntityNotFoundException::new);
     }
 
-    public Optional<User> getByUsername(String username){
+    public Optional<User> getByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
-    public User createUser(UserDTO userDTO){
+    public User createUser(CreateUserRequest request) {
+
         User newUser = User.builder()
-                .firstName(userDTO.firstName())
-                .lastName(userDTO.lastName())
-                .email(userDTO.email())
-                .username(userDTO.username())
-                .password(passwordEncoder.encode(userDTO.password()))
-                .birthDate(userDTO.birthDate())
-                .gender(userDTO.gender())
-                .accountNonExpired(userDTO.accountNonExpired())
-                .isEnabled(userDTO.isEnabled())
-                .accountNonLocked(userDTO.accountNonLocked())
-                .credentialsNonExpired(userDTO.credentialsNonExpired())
-                .authorities(userDTO.authorities())
+                .name(request.name())
+                .username(request.username())
+                .password(passwordEncoder.encode(request.password()))
+                .authorities(request.authorities())
+                .accountNonExpired(true)
+                .credentialsNonExpired(true)
+                .isEnabled(true)
+                .accountNonLocked(true)
                 .build();
 
         return userRepository.save(newUser);
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-    public String loginUser(LoginDTO loginDTO) {
-        // Kullanıcı adı ve şifre kontrolü
-        // JWT oluşturulup döndürülmesi
-        return null;
-    }
-
-    public void resetPassword(String email) {
-        // E-posta adresine şifre sıfırlama bağlantısı gönderme işlemi
-    }
-
-    public Optional<User> findByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
-
-    // Diğer kullanıcı işlemleri metotları...
-
- */
 }

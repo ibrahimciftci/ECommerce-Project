@@ -7,7 +7,7 @@ services:
     container_name: ecommerce-db
     environment:
       MYSQL_ROOT_PASSWORD: springstudent
-      MYSQL_DATABASE: eCommerce-db
+      MYSQL_DATABASE: eCommerce
       MYSQL_USER: springstudent
       MYSQL_PASSWORD: springstudent
     ports:
