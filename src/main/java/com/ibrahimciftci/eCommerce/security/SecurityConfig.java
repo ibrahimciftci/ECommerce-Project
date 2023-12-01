@@ -45,6 +45,7 @@ public class SecurityConfig {
                         x.requestMatchers("/auth/user/**").authenticated()
                                 .requestMatchers("/auth/admin/**").hasRole("ADMIN")
                 )
+
                 .sessionManagement(x -> x.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
