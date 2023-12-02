@@ -41,12 +41,18 @@ public class SecurityConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(x ->
-                        x.requestMatchers("/auth/users/**",
-                                        "/auth/addNewUser/**",
-                                        "/auth/generateToken/**",
-                                        "/auth/findById/**",
-                                        "/auth/updateUser/**",
-                                        "/auth/deleteUser/**")
+                        x.requestMatchers(
+                                "/users/userList/**",
+                                        "/users/addNewUser/**",
+                                        "/users/generateToken/**",
+                                        "/users/findById/**",
+                                        "/users/updateUser/**",
+                                        "/users/deleteUser/**",
+                                        "/products/addNewProduct/**",
+                                        "/products/productList/**",
+                                        "/products/findById/**",
+                                        "/products/updateProduct/**",
+                                        "/products/deleteProduct/**")
                                 .permitAll()
                 )
                 //.authorizeHttpRequests(x ->

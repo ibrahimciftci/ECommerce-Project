@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Entity
+@Table(name = "product")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,11 +28,10 @@ public class Product {
 
     public static Product fromDto(ProductDTO productDTO){
         Product product = new Product();
-        product.setId(productDTO.getId());
-        product.setCode(productDTO.getCode());
-        product.setName(productDTO.getName());
-        product.setDescription(productDTO.getDescription());
-        product.setPrice(productDTO.getPrice());
+        product.setCode(productDTO.code());
+        product.setName(productDTO.name());
+        product.setDescription(productDTO.description());
+        product.setPrice(productDTO.price());
         return product;
     }
 

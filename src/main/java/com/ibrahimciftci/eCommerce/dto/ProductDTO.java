@@ -1,28 +1,18 @@
 package com.ibrahimciftci.eCommerce.dto;
 
 import com.ibrahimciftci.eCommerce.model.Product;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class ProductDTO {
 
-    private Long id;
-    private String code;
-    private String name;
-    private String description;
-    private BigDecimal price;
+public record ProductDTO(
+        String code,
+        String name,
+        String description,
+        BigDecimal price
+) {
 
-
-    public static ProductDTO fromEntity(Product product){
-        return new ProductDTO(product.getId(), product.getCode(), product.getName(), product.getDescription(), product.getPrice());
+    public static ProductDTO fromModel(Product product){
+        return new ProductDTO(product.getCode(), product.getName(), product.getDescription(), product.getPrice());
     }
-
 }

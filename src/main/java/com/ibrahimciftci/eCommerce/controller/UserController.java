@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/users")
 @Slf4j
 public class UserController {
 
@@ -50,8 +50,8 @@ public class UserController {
         throw new UsernameNotFoundException("invalid username {} " + request.username());
     }
 
-    @GetMapping("/users")
-    public ResponseEntity<List<User>> getUserString() {
+    @GetMapping("/userList")
+    public ResponseEntity<List<User>> getUserList() {
         return ResponseEntity.ok(service.findAllUsers());
     }
 
@@ -71,7 +71,5 @@ public class UserController {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-
-
 
 }

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "shopping_cart")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

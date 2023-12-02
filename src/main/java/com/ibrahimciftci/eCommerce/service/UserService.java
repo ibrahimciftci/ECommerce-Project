@@ -62,22 +62,21 @@ public class UserService implements UserDetailsService {
 
     public User updateUser(Long id, CreateUserRequest request) {
 
-        User user = findUserById(id);
-        user.setName(request.name());
-        user.setLastName(request.lastName());
-        user.setEmail(request.email());
-        user.setUsername(request.username());
-        user.setPassword(passwordEncoder.encode(request.password()));
-        user.setGender(request.getGenderEnum());
-        user.setBirthDate(request.birthDate());
-        user.setAuthorities(request.authorities());
+        User existingUser = findUserById(id);
+        existingUser.setName(request.name());
+        existingUser.setLastName(request.lastName());
+        existingUser.setEmail(request.email());
+        existingUser.setUsername(request.username());
+        existingUser.setPassword(passwordEncoder.encode(request.password()));
+        existingUser.setGender(request.getGenderEnum());
+        existingUser.setBirthDate(request.birthDate());
+        existingUser.setAuthorities(request.authorities());
 
-        return userRepository.save(user);
+        return userRepository.save(existingUser);
     }
 
 
     public void deleteById(Long id) {
-        User user = findUserById(id);
         userRepository.deleteById(id);
     }
 }

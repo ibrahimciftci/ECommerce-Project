@@ -26,33 +26,30 @@ public class ProductService {
     }
 
     public Product createProduct(ProductDTO productDTO) {
-        Product product = new Product();
-        product.setCode(productDTO.getCode());
-        product.setName(productDTO.getName());
-        product.setDescription(productDTO.getDescription());
-        product.setPrice(productDTO.getPrice());
+        Product newProduct = Product.builder()
+                .code(productDTO.code())
+                .name(productDTO.name())
+                .description(productDTO.description())
+                .price(productDTO.price())
+                .build();
 
-        return productRepository.save(product);
+        return productRepository.save(newProduct);
     }
 
     public Product updateProduct(Long productId, ProductDTO productDTO) {
         Product existingProduct = getProductById(productId);
-        existingProduct.setCode(productDTO.getCode());
-        existingProduct.setName(productDTO.getName());
-        existingProduct.setDescription(productDTO.getDescription());
-        existingProduct.setPrice(productDTO.getPrice());
+        existingProduct.setCode(productDTO.code());
+        existingProduct.setName(productDTO.name());
+        existingProduct.setDescription(productDTO.description());
+        existingProduct.setPrice(productDTO.price());
 
         return productRepository.save(existingProduct);
     }
 
     public void deleteProduct(Long productId) {
-        Product product = getProductById(productId);
-        productRepository.delete(product);
+        productRepository.deleteById(productId);
     }
 
-   // public List<Product> getProductsByCategory(String category) {
-   //     return productRepository.findByCategory(category);
-    //}
 
     public List<Product> getProductsByPriceRange(BigDecimal minPrice, BigDecimal maxPrice) {
         return productRepository.findByPriceBetween(minPrice, maxPrice);
