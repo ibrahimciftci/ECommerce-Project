@@ -3,6 +3,8 @@ package com.ibrahimciftci.eCommerce.model;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Date;
 import java.util.Set;
 
 @Data
@@ -11,14 +13,23 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String lastName;
+    @Column(nullable = false, unique = true)
+    private String email;
     private String username;
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender")
+    private Gender gender;
+    private Date birthDate;
 
     private boolean accountNonExpired;
     private boolean isEnabled;
@@ -30,4 +41,7 @@ public class User implements UserDetails {
     @Column(name = "role", nullable = false)
     @Enumerated(EnumType.STRING)
     private Set<Role> authorities;
+
+
+
 }

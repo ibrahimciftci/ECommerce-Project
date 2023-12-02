@@ -55,7 +55,6 @@ public class JwtService {
     }
 
     private Key getSignKey() {
-        // The secret key is derived from the provided SECRET using SHA-256
         try {
             MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
             byte[] keyBytes = sha256.digest(SECRET.getBytes());

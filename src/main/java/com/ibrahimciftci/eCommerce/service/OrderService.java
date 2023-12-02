@@ -6,7 +6,6 @@ import com.ibrahimciftci.eCommerce.model.OrderItem;
 import com.ibrahimciftci.eCommerce.model.ShoppingCart;
 import com.ibrahimciftci.eCommerce.repository.OrderItemRepository;
 import com.ibrahimciftci.eCommerce.repository.OrderRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -16,14 +15,17 @@ import java.util.List;
 @Service
 public class OrderService {
 
-    @Autowired
-    private OrderRepository orderRepository;
+    private final OrderRepository orderRepository;
 
-    @Autowired
-    private OrderItemRepository orderItemRepository;
+    private final OrderItemRepository orderItemRepository;
 
-    @Autowired
-    private ShoppingCartService shoppingCartService;
+    private final ShoppingCartService shoppingCartService;
+
+    public OrderService(OrderRepository orderRepository, OrderItemRepository orderItemRepository, ShoppingCartService shoppingCartService) {
+        this.orderRepository = orderRepository;
+        this.orderItemRepository = orderItemRepository;
+        this.shoppingCartService = shoppingCartService;
+    }
 
     public Order createOrder(Long userId) {
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCartByUserId(userId);

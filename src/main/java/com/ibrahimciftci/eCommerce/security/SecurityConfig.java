@@ -1,8 +1,10 @@
 package com.ibrahimciftci.eCommerce.security;
 
 import com.ibrahimciftci.eCommerce.service.UserService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -39,13 +41,19 @@ public class SecurityConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(x ->
-                        x.requestMatchers("/auth/welcome/**", "/auth/addNewUser/**", "/auth/generateToken/**").permitAll()
+                        x.requestMatchers("/auth/users/**",
+                                        "/auth/addNewUser/**",
+                                        "/auth/generateToken/**",
+                                        "/auth/findById/**",
+                                        "/auth/updateUser/**",
+                                        "/auth/deleteUser/**")
+                                .permitAll()
                 )
-                .authorizeHttpRequests(x ->
-                        x.requestMatchers("/auth/user/**").authenticated()
-                                .requestMatchers("/auth/admin/**").hasRole("ADMIN")
-                )
+                //.authorizeHttpRequests(x ->
+                //        x.requestMatchers("/auth/users/**").authenticated()
+                //                .requestMatchers("/auth/updateUser/**").hasRole("ADMIN"))
 
+                //
                 .sessionManagement(x -> x.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
